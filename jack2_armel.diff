@@ -1,0 +1,28 @@
+diff --git a/common/jack/systemdeps.h b/common/jack/systemdeps.h
+index 3c3c064..684e8b5 100644
+--- a/common/jack/systemdeps.h
++++ b/common/jack/systemdeps.h
+@@ -120,4 +120,9 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ 
+     #endif /* __APPLE__ || __linux__ || __sun__ || sun */
+ 
++#ifdef __ARMEL__
++    #undef POST_PACKED_STRUCTURE 
++    #define POST_PACKED_STRUCTURE 
++#endif
++
+ #endif
+diff --git a/posix/JackCompilerDeps_os.h b/posix/JackCompilerDeps_os.h
+index c1c17cd..50ac11d 100644
+--- a/posix/JackCompilerDeps_os.h
++++ b/posix/JackCompilerDeps_os.h
+@@ -58,5 +58,9 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+     #define POST_PACKED_STRUCTURE
+ #endif
+ 
++#ifdef __ARMEL__
++    #undef POST_PACKED_STRUCTURE 
++    #define POST_PACKED_STRUCTURE 
+ #endif
+ 
++#endif

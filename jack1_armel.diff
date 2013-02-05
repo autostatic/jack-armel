@@ -1,0 +1,42 @@
+diff -Nru jack-audio-connection-kit-0.121.3+20120418git75e3e20b.orig/include/internal.h jack-audio-connection-kit-0.121.3+20120418git75e3e20b/include/internal.h
+--- jack-audio-connection-kit-0.121.3+20120418git75e3e20b.orig/include/internal.h	2012-04-02 17:58:19.000000000 +0200
++++ jack-audio-connection-kit-0.121.3+20120418git75e3e20b/include/internal.h	2013-02-05 14:38:48.665495006 +0100
+@@ -47,6 +47,10 @@
+ #else
+ /* Add other things here for non-gcc platforms */
+ #endif
++#ifdef __ARMEL__
++    #undef POST_PACKED_STRUCTURE
++    #define POST_PACKED_STRUCTURE
++#endif
+ #endif
+ 
+ /* Needed by <sysdeps/time.h> */
+diff -Nru jack-audio-connection-kit-0.121.3+20120418git75e3e20b.orig/include/port.h jack-audio-connection-kit-0.121.3+20120418git75e3e20b/include/port.h
+--- jack-audio-connection-kit-0.121.3+20120418git75e3e20b.orig/include/port.h	2012-04-02 17:58:19.000000000 +0200
++++ jack-audio-connection-kit-0.121.3+20120418git75e3e20b/include/port.h	2013-02-05 14:39:06.514907119 +0100
+@@ -68,6 +68,10 @@
+ #else
+ /* Add other things here for non-gcc platforms */
+ #endif
++#ifdef __ARMEL__
++    #undef POST_PACKED_STRUCTURE
++    #define POST_PACKED_STRUCTURE
++#endif
+ #endif
+ 
+ /* Port type structure.  
+diff -Nru jack-audio-connection-kit-0.121.3+20120418git75e3e20b.orig/jack/transport.h jack-audio-connection-kit-0.121.3+20120418git75e3e20b/jack/transport.h
+--- jack-audio-connection-kit-0.121.3+20120418git75e3e20b.orig/jack/transport.h	2012-03-19 15:38:59.000000000 +0100
++++ jack-audio-connection-kit-0.121.3+20120418git75e3e20b/jack/transport.h	2013-02-05 14:39:55.813327645 +0100
+@@ -41,6 +41,10 @@
+ #else
+ /* Add other things here for non-gcc platforms */
+ #endif
++#ifdef __ARMEL__
++    #undef POST_PACKED_STRUCTURE
++    #define POST_PACKED_STRUCTURE
++#endif
+ #endif
+ 
+ 
